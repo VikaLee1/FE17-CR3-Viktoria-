@@ -1,0 +1,27 @@
+<h1 class="text-center">Our specialties</h1>
+
+<div class="row row-cols-3 g-4">
+    <div class="col" *ngFor="let dish of dishes; index as i">
+        <div class="card" style="width: 18rem;">
+            <img src="{{dish.image}}" class="card-img-top" alt="{{dish.name}}">
+
+            <div class="card-body">
+                <h5 class="card-title">{{dish.name}}</h5>
+                <p class="card-text">{{dish.description}}</p>
+            </div>
+
+            <ng-template [ngIf]="dish.availability == true" [ngIfElse]="none">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{dish.price | currency: "EUR"}}</li>
+                </ul>
+                <div class="card-body">
+                    <a routerLink="dishes/{{i}}" class="card-link">Details</a>
+                    <a routerLink="/cart" class="card-link">Order</a>
+                </div>
+            </ng-template>
+            <ng-template #none>
+                <p class="text-danger text-center">Sorry, this product is not available</p>
+            </ng-template>
+        </div>
+    </div>
+</div>

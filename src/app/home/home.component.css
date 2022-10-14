@@ -1,0 +1,22 @@
+ .background_box {
+     background-image: url("/assets/home.jpg");
+     background-repeat: no-repeat;
+     background-size: cover;
+     padding: 250px;
+     /* opacity: 50%; */
+ }
+ 
+ .text-overlay {
+     position: absolute;
+     padding: 1rem;
+     margin-top: -40px;
+     margin-left: -40px;
+     font-weight: 400;
+     /* backdrop-filter: brightness(90%); */
+ }
+ 
+ h2 {
+     font-family: 'Alex Brush', cursive;
+     font-size: xx-large;
+     font-weight: bold;
+ }
