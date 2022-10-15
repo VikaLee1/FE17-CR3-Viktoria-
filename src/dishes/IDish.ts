@@ -4,5 +4,6 @@ export interface IDish {
     description: string;
     price: number;
     availability: boolean;
+    qtty:number;
     ingredients:string;
 };

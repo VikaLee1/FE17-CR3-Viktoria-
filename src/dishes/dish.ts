@@ -5,6 +5,7 @@ export const dishes = [
         description:"This classic dish from the Amalfi coast", 
         price: 12,
         availability: true,
+        qtty:1,
         ingredients:" Spaghetti, garlic, olive oil, zucchini, Provolone del Monaco,basil leaves",
     },
     {
@@ -13,6 +14,7 @@ export const dishes = [
         description:"When life gives you lemons, order lemon spaghetti", 
         price: 9,
         availability:true,
+        qtty:1,
         ingredients:"Linguine, milk, lemons, garlic, olive oil, parsley",
     },
     {
@@ -21,6 +23,7 @@ export const dishes = [
         description:"Try our homemade gnocchi", 
         price: 11,
         availability: true,
+        qtty:1,
         ingredients:"Potatoes, flour, eggs, olive oil, fresh greens, tomatoes",
     },
     {
@@ -29,6 +32,7 @@ export const dishes = [
         description:"You Say Biscotti, I say Cantuccini", 
         price: 8,
         availability: false,
+        qtty:1,
         ingredients:"",
     },
     {
@@ -37,6 +41,7 @@ export const dishes = [
         description:"Set this dish aside for the next time you want to impress your loved ones ", 
         price: 14,
         availability:true,
+        qtty:1,
         ingredients:"Zuccini, beef, pasta sauce, ricotta, parmesan regianno, mozarella, eggs",
     },
     {
@@ -45,6 +50,7 @@ export const dishes = [
         description:"There is something about this combination", 
         price: 15,
         availability: true,
+        qtty:1,
         ingredients:"Clams and mussels, shrimps, squid tentacles, olive oil, garlic, white wine, basil, arrabiata sauce, linguine",
     }
 ];

@@ -5,6 +5,7 @@
 
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h3 class="fw-normal mb-0 text-black">Shopping Cart</h3>
+                    <p class="mb-0">You have {{totalItem}} item(s) in your cart</p>
 
                 </div>
 
@@ -15,6 +16,7 @@
                             <div class="row d-flex justify-content-between align-items-center">
                                 <div class="col-md-2 col-lg-2 col-xl-2">
                                     <img src="{{item.image}}" class="img-fluid rounded-3" alt="{{item.name}}">
+
                                 </div>
                                 <div class="col-md-3 col-lg-3 col-xl-3">
                                     <p class="lead fw-normal mb-2"></p>
@@ -57,26 +59,28 @@
                         </div>
 
                         <div class="row d-flex justify-content-between align-items-center">
-                            <div class="col-md-2 col-lg-2 col-xl-2">
+                            <div class="col-md-4 col-lg-4 col-xl-4">
                                 <p class="lead fw-normal mb-2">Services</p>
+                                <p class="card-text"><small class="text-muted">10% for every order</small></p>
                             </div>
 
-                            <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-8 offset-md-7">
+                            <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-6 offset-md-5">
                                 <h5 class="mb-0">
-                                    <p class="lead fw-normal mb-2">0</p>
+                                    <p class="lead fw-normal mb-2">{{totalService | currency: "EUR"}}</p>
                                 </h5>
                             </div>
 
                         </div>
 
                         <div class="row d-flex justify-content-between align-items-center">
-                            <div class="col-md-2 col-lg-2 col-xl-2">
+                            <div class="col-md-6 col-lg-6 col-xl-6">
                                 <p class="lead fw-normal mb-2">Discount</p>
+                                <p class="card-text"><small class="text-muted">15% for orders over 40 EUR</small></p>
                             </div>
 
-                            <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-8 offset-md-7">
+                            <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-4 offset-md-3">
                                 <h5 class="mb-0">
-                                    <p class="lead fw-normal mb-2">0</p>
+                                    <p class="lead fw-normal mb-2">{{totalDiscount | currency : "EUR"}}</p>
                                 </h5>
                             </div>
 
@@ -90,7 +94,7 @@
                             </div>
                             <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-4 offset-md-3">
                                 <h5 class="mb-0">
-                                    <p class="lead fw-normal mb-2"></p>
+                                    <p class="lead fw-normal mb-2">{{Price | currency:"EUR"}}</p>
                                 </h5>
                             </div>
 
@@ -110,36 +114,25 @@
                         <div class="row d-flex justify-content-between align-items-center">
                             <form [formGroup]="info" (ngSubmit)="onSubmit()">
 
-
                                 <p><label for="fullName" placeholder="name">Full Name: </label></p>
-                                <p><input id="fullName" type="text" formControlName="fullName"></p>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" formControlName="fullName">
+                                </div>
 
                                 <p><label for="address">Adress: </label></p>
-                                <p><input id="adress" type="text" formControlName="adress"></p>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" formControlName="adress">
+                                </div>
+
+                                <input type="submit" class="btn btn-warning btn-block btn-lg" value="Proceed to Pay" routerLink="/success">
 
 
 
-                                <!-- you can disable button if the inserted info doesnt correspond to the required -->
-                                <input type="submit" [disabled]="!info.valid">
                             </form>
 
                         </div>
                     </div>
                 </div>
-
-
-
-                <div class="card">
-                    <div class="card-body">
-                        <button type="button" class="btn btn-warning btn-block btn-lg">Proceed to Pay</button>
-                    </div>
-                </div>
-
-
-
-
-
-
 
             </div>
         </div>

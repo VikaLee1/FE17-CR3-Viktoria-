@@ -25,6 +25,7 @@ items: Array<IDish> = [];
     this.items.splice(i,1);
   }
 
+  // price for all dishes
   getTotal(){
     let total:number=0;
     for(let item of this.items){
@@ -33,20 +34,60 @@ items: Array<IDish> = [];
     return total;
   }
 
-  // getServices(){
-  //   let service:number=0;
-  //   for(let item of this.items){
-  //     service +=this.getTotal*0.9;
-  //   }
-  // }
+  // total amount of items in the cart
+  getTotalItems(){
+    let totalItem:number=0;
+    for(let items of this.items){
+      totalItem +=items.qtty;
+    }
+    return totalItem;
+  }
 
-  // getFinalprice(){
-  //   let final:number=0;
-  //   for(let item of this.items){
-  //     final=this.getTotal;
-  //   } 
-  //   return final;
-    
-  // }
-
+// 10% of the price for all dishes (getTotal) for service delivery
+getServices(){
+  let service:number=0;
+  for (let item of this.items){
+    service +=item.price*0.1
+  }
+  return service;
 }
+
+// final price with the discount
+getDiscount() {
+  let discount:number=0;
+  let final:number=0;
+
+  for(let item of this.items){
+    // final +=(item.price*0.1+item.price);
+     final +=item.price;
+    if(final>=40){
+       discount += item.price*0.15;
+    } }
+    return discount;
+  }
+
+  // final price for everything in the cart
+// getFinal(){
+//   let finalPrice:number=0;
+//   for(let item of this.items){
+//     finalPrice +=(((item.price*0.1)+item.price)-(((item.price*0.1)+item.price)*0.15));
+//     // finalPrice += Number(this.getTotal)+Number(this.getServices)-Number(this.getDiscount); 
+//   }
+//   return finalPrice;
+// }
+
+getFinal(){
+    let finalPrice:number=0;
+    for(let item of this.items){
+      finalPrice +=(((item.price*0.1)+item.price)-(((item.price*0.1)+item.price)*0.15));
+      // finalPrice += (Number(this.getTotal)+Number(this.getServices)-Number(this.getDiscount)); 
+    }
+    return finalPrice;
+  }
+    
+}
+
+
+
+
+

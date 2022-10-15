@@ -12,6 +12,7 @@ import { DetailsComponent } from './details/details.component';
 import { CartComponent } from './cart/cart.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { SuccessComponent } from './success/success.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AboutComponent,
     MenuComponent,
     DetailsComponent,
-    CartComponent
+    CartComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule,
