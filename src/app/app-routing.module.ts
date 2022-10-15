@@ -20,13 +20,13 @@ const routes: Routes = [
     component:MenuComponent,
   },
   {
+    path:"details/:dishID",
+    component: DetailsComponent,
+ },
+  {
     path:"cart",
     component: CartComponent,
-  },
- {
-  path:"dishes/:id",
-  component: DetailsComponent,
- }
+  }
 ];
 
 @NgModule({

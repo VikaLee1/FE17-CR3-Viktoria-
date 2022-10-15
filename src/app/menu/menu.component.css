@@ -4,5 +4,21 @@ img {
 }
 
 .resize {
-    height: 200px;
+    height: 220px;
+}
+
+h1 {
+    padding: 40px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+hr {
+    margin-top: -5px;
+    margin-bottom: 0;
+}
+
+.row {
+    box-shadow: 50px;
+    font-family: 'Poppins', sans-serif;
 }
