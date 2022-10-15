@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { dishes } from 'src/dishes/dish';
 import { IDish } from 'src/dishes/IDish';
 
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -10,8 +11,8 @@ import { IDish } from 'src/dishes/IDish';
 export class MenuComponent implements OnInit {
 // dishes : Array<IDish> =dishes;
 dishes:IDish[]=dishes;
+
   constructor() {
-    // console.log(this.dishes)
    }
 
   ngOnInit(): void {

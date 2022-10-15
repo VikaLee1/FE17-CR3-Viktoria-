@@ -8,48 +8,138 @@
 
                 </div>
 
+                <div *ngFor="let item of items; index as i">
+
+                    <div class="card rounded-3 mb-4">
+                        <div class="card-body p-4">
+                            <div class="row d-flex justify-content-between align-items-center">
+                                <div class="col-md-2 col-lg-2 col-xl-2">
+                                    <img src="{{item.image}}" class="img-fluid rounded-3" alt="{{item.name}}">
+                                </div>
+                                <div class="col-md-3 col-lg-3 col-xl-3">
+                                    <p class="lead fw-normal mb-2"></p>
+                                    <p><span class="text-muted">Ingrediends: </span>{{item.ingredients}}</p>
+                                </div>
+
+                                <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                                    <span>1</span>
+                                </div>
+
+
+                                <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                                    <h5 class="mb-0">Price: {{item.price | currency:"EUR"}}</h5>
+                                </div>
+                                <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                                    <a class="text-danger" (click)="clearItem(i)"><i class="fas fa-trash fa-lg"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="card rounded-3 mb-4">
                     <div class="card-body p-4">
+                        <p class="lead fw-normal mb-2" style="background-color: primary;">Summary</p>
+
+                        <hr>
+
                         <div class="row d-flex justify-content-between align-items-center">
                             <div class="col-md-2 col-lg-2 col-xl-2">
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp" class="img-fluid rounded-3" alt="Cotton T-shirt">
-                            </div>
-                            <div class="col-md-3 col-lg-3 col-xl-3">
-                                <p class="lead fw-normal mb-2">Basic T-shirt</p>
-                                <p><span class="text-muted">Size: </span>M <span class="text-muted">Color: </span>Grey</p>
+                                <p class="lead fw-normal mb-2">Products</p>
                             </div>
 
-                            <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                                <span>1</span>
+                            <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-8 offset-md-7">
+                                <h5 class="mb-0">
+                                    <p class="lead fw-normal mb-2">{{totalprice | currency: "EUR"}}</p>
+                                </h5>
                             </div>
 
+                        </div>
 
-                            <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                                <h5 class="mb-0">$499.00</h5>
+                        <div class="row d-flex justify-content-between align-items-center">
+                            <div class="col-md-2 col-lg-2 col-xl-2">
+                                <p class="lead fw-normal mb-2">Services</p>
                             </div>
-                            <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                                <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
+
+                            <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-8 offset-md-7">
+                                <h5 class="mb-0">
+                                    <p class="lead fw-normal mb-2">0</p>
+                                </h5>
                             </div>
+
+                        </div>
+
+                        <div class="row d-flex justify-content-between align-items-center">
+                            <div class="col-md-2 col-lg-2 col-xl-2">
+                                <p class="lead fw-normal mb-2">Discount</p>
+                            </div>
+
+                            <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-8 offset-md-7">
+                                <h5 class="mb-0">
+                                    <p class="lead fw-normal mb-2">0</p>
+                                </h5>
+                            </div>
+
+                        </div>
+
+                        <hr>
+
+                        <div class="row d-flex justify-content-between align-items-center">
+                            <div class="col-md-6 col-lg-6 col-xl-6">
+                                <p class="lead fw-normal mb-2 bold">Total amount (including VAT)</p>
+                            </div>
+                            <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-4 offset-md-3">
+                                <h5 class="mb-0">
+                                    <p class="lead fw-normal mb-2"></p>
+                                </h5>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+                <div class="card rounded-3 mb-4">
+
+                    <div class="card-body p-4">
+                        <h2>Order Form</h2>
+                        <p>Please fill up the info for the delivery</p>
+                        <div class="row d-flex justify-content-between align-items-center">
+                            <form [formGroup]="info" (ngSubmit)="onSubmit()">
+
+
+                                <p><label for="fullName" placeholder="name">Full Name: </label></p>
+                                <p><input id="fullName" type="text" formControlName="fullName"></p>
+
+                                <p><label for="address">Adress: </label></p>
+                                <p><input id="adress" type="text" formControlName="adress"></p>
+
+
+
+                                <!-- you can disable button if the inserted info doesnt correspond to the required -->
+                                <input type="submit" [disabled]="!info.valid">
+                            </form>
+
                         </div>
                     </div>
                 </div>
 
 
-                <div class="card mb-4">
-                    <div class="card-body p-4 d-flex flex-row">
-                        <div class="form-outline flex-fill">
-                            <input type="text" id="form1" class="form-control form-control-lg" />
-                            <label class="form-label" for="form1">Discound code</label>
-                        </div>
-                        <button type="button" class="btn btn-outline-warning btn-lg ms-3">Apply</button>
-                    </div>
-                </div>
 
                 <div class="card">
                     <div class="card-body">
                         <button type="button" class="btn btn-warning btn-block btn-lg">Proceed to Pay</button>
                     </div>
                 </div>
+
+
+
+
+
+
 
             </div>
         </div>

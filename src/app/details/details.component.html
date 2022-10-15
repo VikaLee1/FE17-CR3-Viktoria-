@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="card">
+    <div class="card" *ngIf="dish">
         <ng-template [ngIf]="dish.availability == true" [ngIfElse]="none">
             <div class="card-header text-center">
                 <span> <h5 class="card-title">{{dish.name}}</h5></span>
@@ -7,10 +7,10 @@
                 <img src="{{dish.image}}" class="card-img-top" alt="{{dish.name}}">
             </div>
             <div class="card-body">
-                <p class="card-text">It is very important to us to eat seasonally and cook with quality ingredients. When you are using something grown locally and cooking with it during the peak season, it’s going to yield the most gorgeous flavor to your recipes.</p>
+                <p class="card-text">It is very important to us to eat seasonally and cook with quality ingredients. When you are using something grown locally and cooking with it during the peak season, it’s going to yield the most gorgeous flavor to your dish.</p>
                 <p class="card-text">Igredients: {{dish.ingredients}}.</p>
                 <p class="card-text">{{dish.price | currency: "EUR"}}</p>
-                <a href="#" class="btn btn-primary">Order</a>
+                <a class="btn btn-primary" (click)="addToCart()">Order</a>
             </div>
         </ng-template>
         <ng-template #none>

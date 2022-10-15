@@ -34,7 +34,7 @@ export const dishes = [
     {
         name:"Zucchini Ensemble",
         image:"../assets/Lasagna.jpg",
-        description:"Set this dish aside for the next time you want to impress you ", 
+        description:"Set this dish aside for the next time you want to impress your loved ones ", 
         price: 14,
         availability:true,
         ingredients:"Zuccini, beef, pasta sauce, ricotta, parmesan regianno, mozarella, eggs",

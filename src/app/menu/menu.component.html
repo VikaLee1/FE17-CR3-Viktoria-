@@ -2,7 +2,9 @@
     <h1 class="text-center">Our specialties</h1>
 
     <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-2 row-cols-xs-1 g-3 ">
-        <div class="col" *ngFor="let dish of dishes; index as dishID">
+        <div class="col" *ngFor="let dish of dishes; index as i">
+            <!-- <div class="col" *ngFor="let dish of dishes; index as dishID"> -->
+
             <div class="card" style="width: 18rem;">
                 <img src="{{dish.image}}" class="card-img-top" alt="{{dish.name}}">
 
@@ -18,7 +20,8 @@
                         </ul>
                         <hr>
                         <div class="card-body">
-                            <a routerLink="details/{{dishID}}" class="card-link">Details</a>
+                            <!-- <a routerLink="details/{{dishID}}" class="card-link">Details</a> -->
+                            <a routerLink="details/{{i}}" class="card-link">Details</a>
                             <a routerLink="/cart" class="card-link">Order</a>
                         </div>
                     </ng-template>
